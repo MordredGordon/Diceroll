@@ -2,12 +2,13 @@ import random
 
 
 def roll(sides, rolls):
-    result = ""
+    rollResult = {}
+    results = []
     total = 0
     for x in range(rolls):
         roll = random.randrange(1, sides+1)
-        result = result + "(" + str(roll) + ") "
+        results.append("("+str(roll)+")")
         total = total + roll
-    result = result + " - Total: " + str(total)
-
-    return result
+    rollResult["results"] = results
+    rollResult["total"] = total
+    return rollResult
